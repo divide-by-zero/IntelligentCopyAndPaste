@@ -171,8 +171,7 @@ namespace IntelligentCopyAndPaste
                         pasteInfo.DisplayName += pasteInfo.ArrayElementType.Name + "[] ";
                     }
 
-                    //継承関係においては、同じフィールドが複数出てきてしまう可能性があるのでチェック
-                    if(arrayCopyAndPasteInfos.Any(inf => inf.TargetFieldInfo == pasteInfo.TargetFieldInfo))continue;
+                    pasteInfo.DisplayName += pasteInfo.TargetFieldInfo.Name;
 
                     arrayCopyAndPasteInfos.Add(pasteInfo);
                 }
